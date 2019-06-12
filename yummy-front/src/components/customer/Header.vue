@@ -1,29 +1,45 @@
 <template>
   <HeaderBase>
-    <v-btn
-      flat
-      @click="$router.push('/customer/home')"
-    >
-      <h3>订餐</h3>
+    <template slot="left-part">
+      <v-btn
+        flat
+        large
+        @click="$router.push('/customer/home')"
+      >
+        <h3>首页</h3>
+      </v-btn>
+      <v-btn flat large @click="$router.push('/customer/home/orders/unhandled')">
+        <h3>我的订单</h3>
+      </v-btn>
+    </template>
+    <v-btn flat large >
+      <h3>我的客服</h3>
     </v-btn>
-    <v-btn flat @click="$router.push('/customer/home/orders/unhandled')">
-      <h3>待处理订单</h3>
-    </v-btn>
-    <v-menu>
+    <v-menu v-if="name" open-on-hover offset-y bottom>
       <v-btn flat slot="activator">
-        <h3>{{name}} <br/> Lv: {{lvl}}</h3>
+        <h3>{{name}}</h3>
         <v-icon>arrow_drop_down</v-icon>
       </v-btn>
-      <v-list>
-        <v-list-tile
-          v-for="(menuItem, index) in menuItems"
-          :key="index"
-          @click="menuItem.onClick"
-        >
-          <v-list-tile-title>{{menuItem.title}}</v-list-tile-title>
+      <v-list dense>
+        <v-list-tile @click="">
+          <v-icon>person</v-icon>
+          <v-list-tile-title>个人中心</v-list-tile-title>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-icon>location_on</v-icon>
+          <v-list-tile-title>我的地址</v-list-tile-title>
+        </v-list-tile>
+        <v-divider></v-divider>
+        <v-list-tile @click="signOut">
+          <v-icon>power_settings_new</v-icon>
+          <v-list-tile-title>退出</v-list-tile-title>
         </v-list-tile>
       </v-list>
     </v-menu>
+    <v-btn v-else flat>
+      <v-icon>person</v-icon>
+      <h4>登录/注册</h4>
+    </v-btn>
   </HeaderBase>
 </template>
 
@@ -38,32 +54,6 @@ export default {
   },
   data: function () {
     return {
-      menuItems: [
-        {
-          title: '管理个人信息',
-          onClick: () => this.$router.push('/customer/home/info')
-        },
-        {
-          title: '管理收货地址',
-          onClick: () => this.$router.push('/customer/home/address')
-        },
-        {
-          title: '管理支付账户',
-          onClick: () => this.$router.push('/customer/home/payment')
-        },
-        {
-          title: '查看订单记录',
-          onClick: () => this.$router.push('/customer/home/records')
-        },
-        {
-          title: '退出',
-          onClick: this.signOut
-        },
-        {
-          title: '删除我的账户',
-          onClick: () => this.$router.push('/customer/home/account/cancel')
-        }
-      ]
     }
   },
   methods: {
