@@ -1,13 +1,13 @@
 <template>
-  <v-flex xs12 style="margin-bottom: 80px">
-    <v-toolbar dark color="primary" app height="60">
+  <v-flex xs12 style="margin-bottom: 60px">
+    <v-toolbar dark color="success" app height="60">
       <v-toolbar-items>
-        <v-btn flat>
+        <v-btn flat style="padding: 0">
           <v-img
-            :src="require('../../assets/logo.jpg')"
+            :src="require('../../assets/logo.png')"
             max-height="100"
             max-width="100"
-          >LOGO IMAGE</v-img>
+          ></v-img>
         </v-btn>
         <slot name="left-part"></slot>
       </v-toolbar-items>

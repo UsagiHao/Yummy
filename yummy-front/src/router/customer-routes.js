@@ -2,7 +2,7 @@ import SignUp from '@/components/customer/SignUp'
 import EmailVerify from '@/components/customer/EmailVerify'
 import Home from '@/components/customer/Home'
 import RestaurantList from '@/components/customer/RestaurantList'
-import Menu from '@/components/customer/Menu'
+import ShopPage from '@/components/customer/ShopPage'
 import OrderPlace from '@/components/customer/OrderPlace'
 import UnhandledOrders from '@/components/customer/UnhandledOrders'
 import AccountCancel from '@/components/customer/AccountCancel'
@@ -32,9 +32,9 @@ export default [
         component: RestaurantList
       },
       {
-        path: 'menu/:rid',
-        name: 'Menu',
-        component: Menu
+        path: 'shop/:rid',
+        name: 'Shop',
+        component: ShopPage
       },
       {
         path: 'order/place',

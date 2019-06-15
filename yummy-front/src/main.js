@@ -8,7 +8,7 @@ import axios from 'axios'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-axios.defaults.baseURL = 'http://localhost:8081/Yummy/api'
+axios.defaults.baseURL = 'http://localhost:5000/Yummy/api'
 axios.defaults.withCredentials = true
 Vue.prototype.$ajax = axios
 Vue.config.productionTip = false

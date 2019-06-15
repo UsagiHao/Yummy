@@ -21,11 +21,11 @@
         <v-icon>arrow_drop_down</v-icon>
       </v-btn>
       <v-list dense>
-        <v-list-tile @click="">
+        <v-list-tile href="#">
           <v-icon>person</v-icon>
           <v-list-tile-title>个人中心</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile href="#">
           <v-icon>location_on</v-icon>
           <v-list-tile-title>我的地址</v-list-tile-title>
         </v-list-tile>
