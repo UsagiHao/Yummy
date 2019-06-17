@@ -47,9 +47,9 @@ export default {
     width: 25px;
     height: 24px;
     border-radius: 20px 0 0 20px;
-    border-right: 1px solid #409d4f;
-    background-color: #409d4f;
-    color: white;
+    border-right: 1px solid #b6b8bf;
+    background-color: #d7d6d6;
+    color: #2070ef;
     outline: 0;
   }
   .quantity {
@@ -63,14 +63,14 @@ export default {
     width: 25px;
     height: 24px;
     border-radius: 0 20px 20px 0;
-    border-left: 1px solid #409d4f;
-    background-color: #409d4f;
-    color: white;
+    border-left: 1px solid #b6b8bf;
+    background-color: #d7d6d6;
+    color: #2070ef;
     outline: 0;
   }
   .num-div {
     height: 26px;
-    border: 1px solid #409d4f;
+    border: 1px solid #b6b8bf;
     border-radius: 20px 20px;
     outline: 0;
     vertical-align: center;

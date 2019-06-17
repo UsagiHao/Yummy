@@ -2,7 +2,7 @@
   <v-flex>
     <v-layout xs12 class="shop-header" align-center>
       <v-flex md1></v-flex>
-      <!----------------- Shop Name & Address---------------------->
+      <!--------------- Shop Name & Address-------------------->
       <v-img
         :src="restaurant.avatarSrc"
         max-width="100"
@@ -22,8 +22,7 @@
           </v-icon>
         </v-layout>
       </v-flex>
-      <v-flex md1>
-      </v-flex>
+      <v-flex md1></v-flex>
       <!------- 起送价、配送费 ------->
       <v-flex>
         <v-layout justify-end>
@@ -42,177 +41,178 @@
     <!--------------- Menu and Shopping Cart --------------->
     <v-layout xs12>
       <!---------------- Meal Type List ----------------->
-      <v-flex ml-3>
+      <v-flex v-if="!mealSearch.active" ml-5 shrink>
         <v-card elevation="5" class="sticky-box">
-          <v-list class="type-list" dense>
-            <template v-for="type in restaurant.types">
-              <v-list-tile
-                :key="type"
-                :class="currentType === type ? 'type-selected': ''"
-                @click="afterTypeSelected(type)"
-              >
-                <v-list-tile-content>
-                  <v-list-tile-title class="text-xs-right">{{type}}</v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </template>
-          </v-list>
+          <v-layout justify-end>
+            <v-list class="type-list" dense>
+              <template v-for="type in restaurant.types">
+                <v-list-tile
+                  :key="type"
+                  :class="currentType === type ? 'type-selected': ''"
+                  @click="afterTypeSelected(type)"
+                >
+                  <v-list-tile-content>
+                    <v-list-tile-title class="text-xs-right">{{type}}</v-list-tile-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </template>
+            </v-list>
+          </v-layout>
         </v-card>
       </v-flex>
+      <v-flex v-else sm2></v-flex>
       <!---------------- Meal List ----------------->
-      <v-flex sm6 mx-5 my-3>
-        <template v-for="type in restaurant.types">
-          <v-layout :key="'title-' + type" mt-3 mb-1>
-            <h2 :id="'h-' + type">{{type}}</h2>
+      <v-flex sm6 ml-5 my-3>
+        <template v-if="!mealSearch.active">
+          <template v-for="type in restaurant.types">
+            <v-layout :key="'title-' + type" mt-3 mb-1>
+              <h2 :id="'h-' + type">{{type}}</h2>
+            </v-layout>
+            <v-layout :key="type" wrap>
+              <template v-for="meal in restaurant.menu[type]">
+                <v-flex :key="meal.id" my-2>
+                  <MealCard
+                    :meal="meal"
+                    :cart-items="cartItems"
+                    :width="mealCardWidth"
+                  ></MealCard>
+                </v-flex>
+              </template>
+            </v-layout>
+          </template>
+        </template>
+        <!--------------- Search Results ----------------->
+        <template v-else>
+          <v-layout align-center my-3>
+            <v-flex shrink mx-3>
+              <h3>搜索"<span style="color: red">{{mealSearch.key}}</span>"的结果</h3>
+            </v-flex>
+            <v-flex shrink mx-3>
+              <a @click="clearSearchResult">返回所有菜品</a>
+            </v-flex>
           </v-layout>
-          <v-layout :key="type" wrap>
-            <template v-for="meal in restaurant.menu[type]">
-              <v-flex :key="meal.id" my-2>
-                <v-card class="meal-card" width="320">
-                  <v-layout align-center>
-                    <!------------- Meal Image ------------->
-                    <v-img
-                      :src="meal.picSrc"
-                      width="100"
-                      height="100"
-                      max-width="100"
-                      max-height="100"
-                    ></v-img>
-                    <!------------ Meal Info --------------->
-                    <v-flex ml-3 mr-1 my-2>
-                      <v-tooltip top>
-                        <h3 class="text-sm-left" slot="activator">
-                          <b>{{compressStr(meal.name, 10)}}</b>
-                        </h3>
-                        <span>{{meal.name}}</span>
-                      </v-tooltip>
-                      <v-tooltip v-if="meal['desc'].length > 0" top>
-                        <h4 class="text-sm-left" slot="activator">
-                          {{compressStr(meal['desc'], 10)}}
-                        </h4>
-                        <span>{{meal['desc']}}</span>
-                      </v-tooltip>
-                      <v-tooltip v-else top>
-                        <h4 slot="activator">&ensp;</h4>
-                        <span>无菜品描述</span>
-                      </v-tooltip>
-                      <v-layout justify-space-between align-content-end>
-                        <h3 class="text-sm-left" style="color: red"><b>￥{{meal.price.toFixed(2)}}</b></h3>
-                        <!---------------- Number Ordered ----------------->
-                        <div
-                          v-if="cartItems[meal.id] !== undefined"
-                          style="margin: 0 10px"
-                        >
-                          <NumInput
-                            v-model="cartItems[meal.id]"
-                            @input="clearIfZero(cartItems, meal.id)"
-                          ></NumInput>
-                        </div>
-                        <v-btn v-else flat icon small style="margin: 0 10px"
-                               @click="$set(cartItems, meal.id, 1)"
-                        >
-                          <v-icon color="success">add_circle</v-icon>
-                        </v-btn>
-                      </v-layout>
-                    </v-flex>
-                  </v-layout>
-                </v-card>
+          <v-layout wrap>
+            <template v-for="m in mealSearch.meals">
+              <v-flex :key="m.id" mx-2 my-2>
+                <MealCard
+                  :meal="m"
+                  :cart-items="cartItems"
+                  :width="mealCardWidth"
+                ></MealCard>
               </v-flex>
             </template>
           </v-layout>
         </template>
       </v-flex>
-      <!---------------- Shopping Cart ----------------->
-      <v-flex sm3>
-        <v-card class="cart-card">
-          <!----------------- Cart Item List ----------------------->
-          <v-layout class="cart-item-list">
-            <v-flex>
-              <v-list dense>
-                <v-list-tile>
-                  <v-layout justify-space-between align-center>
-                    <v-flex shrink>
-                      <h3><b>我的购物车</b></h3>
-                    </v-flex>
-                    <v-flex shrink>
-                      <v-btn flat small @click="clearCart">
-                        <v-icon color="red">delete_forever</v-icon>
-                        清空
-                      </v-btn>
-                    </v-flex>
-                  </v-layout>
-                </v-list-tile>
-                <template v-for="(num, mid) in cartItems">
-                  <v-divider :key="'d-' + mid"></v-divider>
-                  <v-list-tile :key="mid">
-                    <v-list-tile-content>
-                      <v-layout justify-space-between style="width: 200px">
-                        <v-flex grow align-self-center>
-                          <h4>{{compressStr(restaurant.mealDict[mid].name, 8)}}</h4>
-                        </v-flex>
-                        <v-flex shrink align-self-center>
-                          <NumInput
-                            v-model="cartItems[mid]"
-                            @input="clearIfZero(cartItems, restaurant.mealDict[mid].id)"
-                          ></NumInput>
-                        </v-flex>
-                      </v-layout>
-                    </v-list-tile-content>
-                    <v-list-tile-action>
-                      <h3>￥{{(restaurant.mealDict[mid].price * num).toFixed(2)}}</h3>
-                    </v-list-tile-action>
-                  </v-list-tile>
-                </template>
-              </v-list>
-            </v-flex>
-          </v-layout>
-          <!----------------- Discount Area ----------------------->
-          <v-layout justify-center class="promotion-area">
-            <template v-for="(discount, amount, index) in restaurant.promotions">
-              <span :key="amount">满{{amount}}减{{discount}}</span>
-              <span v-if="index < Object.keys(restaurant.promotions).length - 1" :key="index">，</span>
-            </template>
-          </v-layout>
-          <!----------------- Action Area ----------------------->
-          <v-layout>
-            <v-btn dark class="cart-btn cart-btn-left">
-              <v-flex>
-                <v-layout justify-start px-3 align-center>
-                  <v-badge overlap color="red">
-                    <span v-if="cartItemCount > 0" slot="badge">
-                      {{cartItemCount}}
-                    </span>
-                    <v-icon>shopping_cart</v-icon>
-                  </v-badge>
-                  <template v-if="cost.after > 0">
-                    <h4>￥</h4>
-                    <h2><b>{{cost.after.toFixed(2)}}</b></h2>
-                    <h3>&nbsp;|</h3>
-                  </template>
-                  <h4 v-if="cost.before > cost.after">
-                    <s>￥{{cost.before.toFixed(2)}}</s>
-                  </h4>
-                </v-layout>
-              </v-flex>
-              <v-flex shrink pr-3>
-                <h5 v-if="restaurant.priceDelivery > 0">配送费<br>￥{{restaurant.priceDelivery.toFixed(2)}}</h5>
-                <h5 v-else>免配送费</h5>
-              </v-flex>
-            </v-btn>
-            <v-flex v-if="cost.after < restaurant.priceStart" style="background-color: #b6b8bf">
-              <v-layout style="height: 50px" align-center justify-center>
-                <h4><b>差{{(restaurant.priceStart - cost.after).toFixed(2)}}元起送</b></h4>
-              </v-layout>
-            </v-flex>
-            <v-btn v-else class="cart-btn cart-btn-right" dark color="success" @click="gotoPlace">
-              <h3><b>去结算 ></b></h3>
-            </v-btn>
-          </v-layout>
-        </v-card>
+      <!------------ Search & Info -------------->
+      <v-flex sm3 pt-3 mx-3>
+        <v-layout>
+          <v-text-field
+            v-model="mealSearch.key"
+            label="搜索菜品"
+            append-icon="search"
+            @keypress.enter="searchMeals"
+          ></v-text-field>
+        </v-layout>
+        <v-layout mt-3>
+          <p style="text-align: start">注意事项：<br/>
+            1.收到后尽快食用或放入冰箱冷冻保存<br/>
+            2.包装内的干冰-70℃，杜绝手触摸或食用，不可放入冰箱等密闭空间，任其自然挥发即可<br/>
+            3.订单生成后，不支持更改收货地址<br/>
+            4.我们尽量在1小时左右为您送达，如遇交通堵塞或管制，路面积水或积冰，大风、大雨、冰雪、
+            高温等不利天气或不可抗力，配送人员可能会延长您商品的配送时间。如需协助，请拨打4009870870专线<br/>
+            5.目前暂不支持蛋糕裱字和代写祝福语</p>
+        </v-layout>
       </v-flex>
+      <!---------------- Shopping Cart ----------------->
+      <v-card class="cart-card">
+        <!----------------- Cart Item List ----------------------->
+        <v-layout class="cart-item-list">
+                                      <v-flex>
+                                      <v-list dense>
+                                      <v-list-tile>
+                                      <v-layout justify-space-between align-center>
+                                      <v-flex shrink>
+                                      <h3><b>我的购物车</b></h3>
+                                      </v-flex>
+                                      <v-flex shrink>
+                                      <v-btn flat small @click="clearCart">
+                                      <v-icon color="red">delete_forever</v-icon>
+                                      清空
+                                      </v-btn>
+                                      </v-flex>
+                                      </v-layout>
+                                      </v-list-tile>
+                                      <template v-for="(num, mid) in cartItems">
+                                      <v-divider :key="'d-' + mid"></v-divider>
+                                      <v-list-tile :key="mid">
+                                      <v-list-tile-content>
+                                      <v-layout justify-space-between style="width: 200px">
+                                      <v-flex grow align-self-center>
+                                      <h4>{{compressStr(restaurant.mealDict[mid].name, 8)}}</h4>
+                                      </v-flex>
+                                      <v-flex shrink align-self-center>
+                                      <NumInput
+                                      v-model="cartItems[mid]"
+                                      @input="clearIfZero(cartItems, restaurant.mealDict[mid].id)"
+                                      ></NumInput>
+                                      </v-flex>
+                                      </v-layout>
+                                      </v-list-tile-content>
+                                      <v-list-tile-action>
+                                      <h3>￥{{(restaurant.mealDict[mid].price * num).toFixed(2)}}</h3>
+                                      </v-list-tile-action>
+                                      </v-list-tile>
+                                      </template>
+                                      </v-list>
+                                      </v-flex>
+                                      </v-layout>
+        <!----------------- Discount Area ----------------------->
+        <v-layout justify-center class="promotion-area">
+                                                     <template v-for="(discount, amount, index) in restaurant.promotions">
+                                                     <span :key="amount">满{{amount}}减{{discount}}</span>
+                                                     <span v-if="index < Object.keys(restaurant.promotions).length - 1" :key="index">，</span>
+                                                     </template>
+                                                     </v-layout>
+        <!----------------- Action Area ----------------------->
+        <v-layout>
+               <v-btn dark class="cart-btn cart-btn-left">
+               <v-flex>
+               <v-layout justify-start px-3 align-center>
+               <v-badge overlap color="red">
+               <span v-if="cartItemCount > 0" slot="badge">
+               {{cartItemCount}}
+               </span>
+               <v-icon>shopping_cart</v-icon>
+               </v-badge>
+               <template v-if="cost.after > 0">
+               <h4>￥</h4>
+               <h2><b>{{cost.after.toFixed(2)}}</b></h2>
+               <h3>&nbsp;|</h3>
+               </template>
+               <h4 v-if="cost.before > cost.after">
+               <s>￥{{cost.before.toFixed(2)}}</s>
+               </h4>
+               </v-layout>
+               </v-flex>
+               <v-flex shrink pr-3>
+               <h5 v-if="restaurant.priceDelivery > 0">配送费<br>￥{{restaurant.priceDelivery.toFixed(2)}}</h5>
+               <h5 v-else>免配送费</h5>
+               </v-flex>
+               </v-btn>
+               <v-flex v-if="cost.after < restaurant.priceStart" style="background-color: #b6b8bf">
+               <v-layout style="height: 50px" align-center justify-center>
+               <h4><b>差{{(restaurant.priceStart - cost.after).toFixed(2)}}元起送</b></h4>
+               </v-layout>
+               </v-flex>
+               <v-btn v-else class="cart-btn cart-btn-right" dark color="success" @click="gotoPlace">
+               <h3><b>去结算 ></b></h3>
+               </v-btn>
+               </v-layout>
+      </v-card>
     </v-layout>
     <!------------- Back to Top Button ------------->
-    <v-btn v-if="backTop" large fixed icon right dark color="success" style="top: 50%"
+    <v-btn v-if="backTop" large fixed icon right dark color="primary" style="top: 50%"
            @click="scrollToTop"
     >
       <v-icon>arrow_upward</v-icon>
@@ -222,9 +222,10 @@
 
 <script>
 import NumInput from '@/components/util/NumInput'
+import MealCard from '@/components/customer/MealCard'
 export default {
   name: 'ShopPage',
-  components: {NumInput},
+  components: {MealCard, NumInput},
   data: function () {
     return {
       restaurant: {
@@ -246,8 +247,14 @@ export default {
       },
       currentType: '',
       scrolling: false,
+      mealCardWidth: 320,
       cartItems: {},
-      backTop: false
+      backTop: false,
+      mealSearch: {
+        active: false,
+        key: '',
+        meals: []
+      }
     }
   },
   computed: {
@@ -290,7 +297,6 @@ export default {
         'rid': this.restaurant.id
       }
     }).then(res => {
-      console.log(res)
       let r = this.restaurant
       r.name = res.data.data['name']
       r.priceStart = res.data.data['priceStart']
@@ -308,7 +314,6 @@ export default {
         'rid': this.restaurant.id
       }
     }).then(res => {
-      console.log(res)
       /**
        * response form: [
        * {
@@ -331,6 +336,25 @@ export default {
     }
   },
   methods: {
+    searchMeals: function () {
+      if (this.mealSearch.key.length === 0) {
+        this.clearSearchResult()
+      } else {
+        this.mealSearch.active = true
+        this.mealSearch.meals.splice(0, this.mealSearch.meals.length)
+        for (let mid of Object.keys(this.restaurant.mealDict)) {
+          let m = this.restaurant.mealDict[mid]
+          if (m['name'].includes(this.mealSearch.key)) {
+            this.mealSearch.meals.push(m)
+          }
+        }
+      }
+    },
+    clearSearchResult: function () {
+      this.mealSearch.active = false
+      this.mealSearch.key = ''
+      this.mealSearch.meals.splice(0, this.mealSearch.meals.length)
+    },
     afterTypeSelected: function (type) {
       this.scrolling = true
       // scroll to the corresponding header
@@ -416,7 +440,13 @@ export default {
       }
     },
     gotoPlace: function () {
-      // TODO save cart items and leave the page
+      // TODO Goto placing order page.
+      window.localStorage.setItem('orderInfo', JSON.stringify({
+        'rid': this.restaurant.id,
+        'cartItems': this.cartItems,
+        'cost': this.cost
+      }))
+      console.log('Stub: goto placing order page.')
     }
   }
 }
@@ -438,9 +468,7 @@ export default {
     bottom: 0;
   }
   .type-list {
-    /*background-color: #ede8ef;*/
-  }
-  .meal-card {
+    width: 200px;
     /*background-color: #ede8ef;*/
   }
   .type-selected {
@@ -465,9 +493,9 @@ export default {
     border-radius: 0 0 0 0;
   }
   .cart-btn-left {
-    width: 230px;
+    width: 240px;
   }
   .cart-btn-right {
-    width: 120px;
+    width: 110px;
   }
 </style>

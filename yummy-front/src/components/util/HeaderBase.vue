@@ -1,6 +1,6 @@
 <template>
   <v-flex xs12 style="margin-bottom: 60px">
-    <v-toolbar dark color="success" app height="60">
+    <v-toolbar dark color="blue" app height="60">
       <v-toolbar-items>
         <v-btn flat style="padding: 0">
           <v-img

@@ -8,10 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="beda16b5-4a6a-42fa-985b-86942a60f06b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/components/customer/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yummy-front/src/components/util/HeaderBase.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/components/util/HeaderBase.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/router/customer-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/router/customer-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/util/NumInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/components/util/NumInput.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,87 +58,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/Menu.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
-              <folding>
-                <element signature="n#v-layout#0;n#v-flex#1;n#v-layout#0;n#template#0;n#!!top" />
-                <element signature="n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-layout#1;n#v-flex#1;n#v-layout#0;n#template#0;n#!!top" />
-                <element signature="n#v-expansion-panel-content#2;n#v-expansion-panel#0;n#v-layout#1;n#v-flex#1;n#v-layout#0;n#template#0;n#!!top" />
-                <element signature="e#4549#4737#0" />
-                <element signature="e#4828#4873#0" />
-                <element signature="e#4930#5292#0" />
-                <element signature="e#5341#5557#0" />
-                <element signature="e#5587#6255#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-381">
-              <caret line="132" column="42" selection-start-line="132" selection-start-column="42" selection-end-line="132" selection-end-column="42" />
+            <state relative-caret-position="56">
+              <caret line="378" column="10" lean-forward="true" selection-start-line="378" selection-start-column="10" selection-end-line="378" selection-end-column="10" />
               <folding>
                 <element signature="n#v-img#0;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#h2#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#v-flex#2;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-layout#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#template#0;n#v-layout#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-icon#0;n#v-layout#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-layout#0;n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#0;n#v-layout#0;n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#1;n#v-layout#0;n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#template#0;n#v-list#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-list-tile#0;n#template#0;n#v-list#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-list-tile-content#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
-                <element signature="e#4101#4107#1" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#template#0;n#v-layout#1;n#template#0;n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#template#0;n#v-layout#1;n#template#0;n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#v-btn#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#template#0;n#v-layout#1;n#template#0;n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h3#0;n#v-flex#0;n#v-layout#0;n#template#1;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#style#0;n#p#0;n#v-layout#1;n#v-flex#3;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#v-layout#0;n#v-list-tile-content#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#0;n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#1;n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-btn#0;n#v-flex#1;n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#0;n#v-layout#0;n#v-list-tile-content#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-list-tile-action#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-layout#1;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#template#0;n#v-layout#1;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
-                <element signature="e#7923#7929#0" expanded="true" />
-                <element signature="n#style#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#v-layout#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#v-btn#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-badge#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#span#0;n#v-badge#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#template#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#h4#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#1;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-layout#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+                <element signature="n#v-btn#1;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-btn#0;n#v-flex#0;n#template#0;n#!!top" />
-                <element signature="e#9322#9752#0" />
-                <element signature="e#9624#9688#0" />
-                <element signature="e#10121#10261#0" />
-                <element signature="e#10285#10869#0" />
-                <element signature="e#10363#10452#0" />
-                <element signature="e#10902#11446#0" />
-                <element signature="e#13082#13256#0" />
-                <element signature="e#12146#12407#0" />
-                <element signature="e#13630#13730#0" />
-                <element signature="e#13772#13904#0" />
-                <element signature="e#12644#12658#0" />
-                <element signature="e#13933#14035#0" />
-                <element signature="e#12919#12933#0" />
-                <element signature="e#12901#13008#0" />
-                <element signature="e#12534#12909#0" />
-                <element signature="e#14550#14611#0" />
-                <element signature="e#15008#15141#0" />
-                <element signature="e#15157#15233#0" />
-                <element signature="e#15248#15335#0" />
-                <element signature="e#15453#15489#0" />
-                <element signature="e#15503#15582#0" />
-                <element signature="e#15601#15679#0" />
-                <element signature="e#15698#15739#0" />
-                <element signature="e#15752#15824#0" />
-                <element signature="e#15842#15865#0" />
-                <element signature="e#15884#15907#0" />
+                <element signature="e#9075#9124#0" expanded="true" />
+                <element signature="e#9502#9823#0" />
+                <element signature="e#11513#11578#0" />
+                <element signature="e#9970#10110#0" />
+                <element signature="e#10134#10718#0" />
+                <element signature="e#10751#11853#0" />
+                <element signature="e#11878#12018#0" />
+                <element signature="e#13659#13673#0" />
+                <element signature="e#13824#13838#0" />
+                <element signature="e#12072#12388#0" />
+                <element signature="e#12419#12576#0" />
+                <element signature="e#12618#12750#0" />
+                <element signature="e#12791#12878#0" />
+                <element signature="e#12907#13017#0" />
+                <element signature="e#13056#13264#0" />
+                <element signature="e#13270#13377#0" />
+                <element signature="e#13413#13908#0" />
+                <element signature="e#13914#13975#0" />
+                <element signature="e#14011#14393#0" />
+                <element signature="e#14422#14478#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yummy-front/src/components/util/NumInput.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -192,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/yyx/controller/CustomerOrderController.java" />
         <option value="$PROJECT_DIR$/yummy-front/src/router/admin-routes.js" />
         <option value="$PROJECT_DIR$/yummy-front/src/components/admin/Header.vue" />
         <option value="$PROJECT_DIR$/yummy-front/src/components/util/DatePicker.vue" />
@@ -242,6 +226,7 @@
         <option value="$PROJECT_DIR$/yummy-front/src/main.js" />
         <option value="$PROJECT_DIR$/yummy-front/src/components/util/HeaderBase.vue" />
         <option value="$PROJECT_DIR$/yummy-front/src/components/util/NumInput.vue" />
+        <option value="$PROJECT_DIR$/yummy-front/src/components/customer/MealCard.vue" />
         <option value="$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue" />
       </list>
     </option>
@@ -306,7 +291,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,20 +336,13 @@
               <item name="Yummy" type="462c0819:PsiDirectoryNode" />
               <item name="yummy-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Yummy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Yummy" type="462c0819:PsiDirectoryNode" />
-              <item name="yummy-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -578,12 +555,13 @@
       <workItem from="1560302742387" duration="2564000" />
       <workItem from="1560308299561" duration="100000" />
       <workItem from="1560308612506" duration="77408000" />
-      <workItem from="1560563822608" duration="13058000" />
+      <workItem from="1560563822608" duration="13803000" />
+      <workItem from="1560752434179" duration="8877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="731089000" />
+    <option name="totallyTimeSpent" value="740711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +576,7 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="490" y="44" width="382" height="675" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.23744293" />
+      <window_info content_ui="combo" x="490" y="44" width="382" height="675" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.2412481" />
       <window_info id="Structure" order="1" sideWeight="0.5007949" side_tool="true" weight="0.24961948" />
       <window_info id="Web" order="2" side_tool="true" weight="0.32952815" />
       <window_info id="Persistence" order="3" sideWeight="0.5007949" side_tool="true" weight="0.24961948" />
@@ -673,92 +651,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/src.zip!/java/nio/ByteBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="262" column="13" lean-forward="true" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#ByteBuffer#0" />
-            <element signature="e#9042#9372#0" />
-            <element signature="e#9590#10146#0" />
-            <element signature="e#10267#10845#0" />
-            <element signature="e#10267#11036#0" />
-            <element signature="e#11042#12379#0" />
-            <element signature="e#11042#12683#0" />
-            <element signature="e#12506#12579#0" />
-            <element signature="e#12615#12677#0" />
-            <element signature="e#12689#13317#0" />
-            <element signature="e#13517#14290#0" />
-            <element signature="e#14336#14999#0" />
-            <element signature="e#15049#15837#0" />
-            <element signature="e#15935#16265#0" />
-            <element signature="e#16303#16831#0" />
-            <element signature="e#16881#17257#0" />
-            <element signature="e#17317#17922#0" />
-            <element signature="e#18018#20007#0" />
-            <element signature="e#18018#20337#0" />
-            <element signature="e#20343#20930#0" />
-            <element signature="e#21057#22704#0" />
-            <element signature="e#21057#23100#0" />
-            <element signature="e#23106#25134#0" />
-            <element signature="e#23106#25465#0" />
-            <element signature="e#25471#26159#0" />
-            <element signature="e#26377#26775#0" />
-            <element signature="e#26869#27590#0" />
-            <element signature="e#26869#27801#0" />
-            <element signature="e#27807#28655#0" />
-            <element signature="e#27807#28873#0" />
-            <element signature="e#28879#30513#0" />
-            <element signature="e#30561#30704#0" />
-            <element signature="e#30752#30865#0" />
-            <element signature="e#30752#31217#0" />
-            <element signature="e#31228#31811#0" />
-            <element signature="e#31228#31999#0" />
-            <element signature="e#32005#32792#0" />
-            <element signature="e#32005#33285#0" />
-            <element signature="e#33291#33371#0" />
-            <element signature="e#33377#34006#0" />
-            <element signature="e#33377#34387#0" />
-            <element signature="e#34207#34329#1" />
-            <element signature="e#34393#34485#0" />
-            <element signature="e#34491#34516#0" />
-            <element signature="e#35010#35377#0" />
-            <element signature="e#35501#35775#0" />
-            <element signature="e#35501#35999#0" />
-            <element signature="e#36233#36723#0" />
-            <element signature="e#36765#37416#0" />
-            <element signature="e#37474#38003#0" />
-            <element signature="e#38054#38779#0" />
-            <element signature="e#38848#39590#0" />
-            <element signature="e#39644#40137#0" />
-            <element signature="e#40181#40835#0" />
-            <element signature="e#40895#41427#0" />
-            <element signature="e#41480#42208#0" />
-            <element signature="e#42279#43023#0" />
-            <element signature="e#43079#43571#0" />
-            <element signature="e#43611#44263#0" />
-            <element signature="e#44319#44849#0" />
-            <element signature="e#44898#45624#0" />
-            <element signature="e#45691#46433#0" />
-            <element signature="e#46485#46981#0" />
-            <element signature="e#47023#47680#0" />
-            <element signature="e#47738#48271#0" />
-            <element signature="e#48322#49051#0" />
-            <element signature="e#49120#49864#0" />
-            <element signature="e#49918#50414#0" />
-            <element signature="e#50458#51115#0" />
-            <element signature="e#51175#51710#0" />
-            <element signature="e#51763#52494#0" />
-            <element signature="e#52565#53310#0" />
-            <element signature="e#53366#53868#0" />
-            <element signature="e#53914#54577#0" />
-            <element signature="e#54639#55178#0" />
-            <element signature="e#55233#55968#0" />
-            <element signature="e#56041#56789#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/src.zip!/java/nio/Buffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -4473,16 +4365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yummy-front/src/router/customer-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yummy-front/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
@@ -4511,6 +4393,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yummy-front/src/assets/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/yummy-front/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -4521,10 +4406,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yummy-front/src/router/customer-routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yummy-front/src/components/util/HeaderBase.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#v-btn#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#v-img#0;n#v-btn#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-flex#0;n#template#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yummy-front/src/components/util/NumInput.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/MealCard.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding>
+            <element signature="n#v-img#0;n#v-layout#0;n#v-card#0;n#template#0;n#!!top" />
+            <element signature="e#828#834#1" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#v-btn#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/Menu.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+        <state relative-caret-position="321">
+          <caret line="214" column="28" selection-start-line="214" selection-start-column="28" selection-end-line="214" selection-end-column="28" />
           <folding>
             <element signature="n#v-layout#0;n#v-flex#1;n#v-layout#0;n#template#0;n#!!top" />
             <element signature="n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-layout#1;n#v-flex#1;n#v-layout#0;n#template#0;n#!!top" />
@@ -4538,79 +4466,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yummy-front/src/assets/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yummy-front/src/components/util/HeaderBase.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-btn#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#v-img#0;n#v-btn#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-flex#0;n#template#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yummy-front/src/components/util/NumInput.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="132" column="42" selection-start-line="132" selection-start-column="42" selection-end-line="132" selection-end-column="42" />
+        <state relative-caret-position="56">
+          <caret line="378" column="10" lean-forward="true" selection-start-line="378" selection-start-column="10" selection-end-line="378" selection-end-column="10" />
           <folding>
             <element signature="n#v-img#0;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#h2#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#v-flex#2;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-layout#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#template#0;n#v-layout#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-icon#0;n#v-layout#0;n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-layout#0;n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#0;n#v-layout#0;n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#1;n#v-layout#0;n#v-flex#3;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#template#0;n#v-list#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-list-tile#0;n#template#0;n#v-list#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-list-tile-content#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
-            <element signature="e#4101#4107#1" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#template#0;n#v-layout#1;n#template#0;n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#template#0;n#v-layout#1;n#template#0;n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-btn#0;n#v-layout#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#0;n#template#0;n#v-layout#1;n#template#0;n#v-flex#1;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h3#0;n#v-flex#0;n#v-layout#0;n#template#1;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#p#0;n#v-layout#1;n#v-flex#3;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#v-layout#0;n#v-list-tile-content#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#0;n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#1;n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-btn#0;n#v-flex#1;n#v-layout#0;n#v-list-tile#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#0;n#v-layout#0;n#v-list-tile-content#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-list-tile-action#0;n#v-list-tile#0;n#template#0;n#v-list#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-layout#1;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#template#0;n#v-layout#1;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
-            <element signature="e#7923#7929#0" expanded="true" />
-            <element signature="n#style#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-layout#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-btn#0;n#v-flex#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-badge#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#span#0;n#v-badge#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#template#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#h4#0;n#v-layout#0;n#v-flex#0;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#1;n#v-btn#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-layout#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
+            <element signature="n#v-btn#1;n#v-layout#2;n#v-card#0;n#v-flex#2;n#v-layout#1;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-btn#0;n#v-flex#0;n#template#0;n#!!top" />
-            <element signature="e#9322#9752#0" />
-            <element signature="e#9624#9688#0" />
-            <element signature="e#10121#10261#0" />
-            <element signature="e#10285#10869#0" />
-            <element signature="e#10363#10452#0" />
-            <element signature="e#10902#11446#0" />
-            <element signature="e#13082#13256#0" />
-            <element signature="e#12146#12407#0" />
-            <element signature="e#13630#13730#0" />
-            <element signature="e#13772#13904#0" />
-            <element signature="e#12644#12658#0" />
-            <element signature="e#13933#14035#0" />
-            <element signature="e#12919#12933#0" />
-            <element signature="e#12901#13008#0" />
-            <element signature="e#12534#12909#0" />
-            <element signature="e#14550#14611#0" />
-            <element signature="e#15008#15141#0" />
-            <element signature="e#15157#15233#0" />
-            <element signature="e#15248#15335#0" />
-            <element signature="e#15453#15489#0" />
-            <element signature="e#15503#15582#0" />
-            <element signature="e#15601#15679#0" />
-            <element signature="e#15698#15739#0" />
-            <element signature="e#15752#15824#0" />
-            <element signature="e#15842#15865#0" />
-            <element signature="e#15884#15907#0" />
+            <element signature="e#9075#9124#0" expanded="true" />
+            <element signature="e#9502#9823#0" />
+            <element signature="e#11513#11578#0" />
+            <element signature="e#9970#10110#0" />
+            <element signature="e#10134#10718#0" />
+            <element signature="e#10751#11853#0" />
+            <element signature="e#11878#12018#0" />
+            <element signature="e#13659#13673#0" />
+            <element signature="e#13824#13838#0" />
+            <element signature="e#12072#12388#0" />
+            <element signature="e#12419#12576#0" />
+            <element signature="e#12618#12750#0" />
+            <element signature="e#12791#12878#0" />
+            <element signature="e#12907#13017#0" />
+            <element signature="e#13056#13264#0" />
+            <element signature="e#13270#13377#0" />
+            <element signature="e#13413#13908#0" />
+            <element signature="e#13914#13975#0" />
+            <element signature="e#14011#14393#0" />
+            <element signature="e#14422#14478#0" />
           </folding>
         </state>
       </provider>
