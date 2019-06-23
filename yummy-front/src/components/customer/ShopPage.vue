@@ -440,13 +440,21 @@ export default {
       }
     },
     gotoPlace: function () {
-      // TODO Goto placing order page.
+      let items = {}
+      for (let mid of Object.keys(this.cartItems)) {
+        let m = this.restaurant.mealDict[mid]
+        items[mid] = {
+          'name': m['name'],
+          'price': m['price'],
+          'num': this.cartItems[mid]
+        }
+      }
       window.localStorage.setItem('orderInfo', JSON.stringify({
         'rid': this.restaurant.id,
-        'cartItems': this.cartItems,
+        'cartItems': items,
         'cost': this.cost
       }))
-      console.log('Stub: goto placing order page.')
+      $router.push('/customer/CheckOut')
     }
   }
 }

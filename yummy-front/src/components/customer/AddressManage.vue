@@ -1,213 +1,195 @@
 <template>
-  <v-layout>
-    <v-flex xs1 sm2></v-flex>
-    <v-flex>
-      <v-card>
-        <v-card-title>
-          <h2>收货地址管理</h2>
-        </v-card-title>
-        <v-card-text>
-          <v-list>
-            <template v-for="(addressInfo, index) in addressInfos">
-              <v-list-tile
-                :key="addressInfo.id"
-                @click="showDialog(addressInfo)"
-              >
-                <v-list-tile-title>
-                  {{addressInfo.address}}
-                </v-list-tile-title>
-              </v-list-tile>
-              <v-divider :key="'d' + index"></v-divider>
-            </template>
-          </v-list>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn
-            color="primary"
-            @click="addDialog"
-          >
-            添加收货地址
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-    <v-flex xs1 sm2></v-flex>
-    <v-dialog v-model="detailDialog.show" width="400">
-      <v-card>
-        <v-card-text>
-          <v-form ref="addressForm" lazy-validation>
-            <v-text-field
-              label="地址"
-              v-model="address"
-              :rules="rules.addressRules"
-              :counter="50"
-              :disabled="!detailDialog.editable"
-            ></v-text-field>
-            <v-text-field
-              type="number"
-              label="纬度"
-              :rules="rules.latitudeRules"
-              v-model="latitude"
-              :disabled="!detailDialog.editable"
-            ></v-text-field>
-            <v-text-field
-              type="number"
-              label="经度"
-              :rules="rules.longitudeRules"
-              v-model="longitude"
-              :disabled="!detailDialog.editable"
-            ></v-text-field>
-          </v-form>
-        </v-card-text>
-        <v-card-actions>
-          <template v-if="!detailDialog.additionMode">
-            <v-btn color="primary" @click="detailDialog.editable = !detailDialog.editable">
-              {{detailDialog.editable ? '取消' : '编辑'}}
-            </v-btn>
-            <v-btn color="success" :disabled="!detailDialog.editable" @click="modifyAddress">
-              提交
-            </v-btn>
-            <v-btn color="error" @click="removeAddress">删除</v-btn>
+  <el-row>
+    <el-col :span="4">
+      <el-menu
+        default-active="3-2"
+        @select="handleSelect">
+        <el-menu-item index="1">
+          <i class="el-icon-menu"></i>
+          <span slot="title">我的订单</span>
+        </el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>我的资料</span>
           </template>
-          <v-btn v-else color="success" @click="addAddress">提交</v-btn>
-          <v-btn color="info" @click="detailDialog.show = false">关闭</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </v-layout>
+          <el-menu-item-group>
+            <el-menu-item index="2-1">个人资料</el-menu-item>
+            <el-menu-item index="2-2">地址管理</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+      </el-menu>
+    </el-col>
+    <el-col :span="20">
+      <div align="left" style="margin-top: 5%; margin-left: 5%;">
+        <label style="font-size:20px;">
+          地址管理
+        </label>
+        <el-divider></el-divider>
+      </div>
+      <div align="left" style="margin-left: 5%;">
+        <el-row>
+          <el-col :span="7" v-for="(value,index) in addresses" :key="index" style="margin-right: 3%; margin-bottom: 3%">
+            <el-card :body-style="{ padding: '3px'}" shadow="hover" style="width: 100%; height: 150px;padding-right: 5%">
+              <div style="padding: 6px">
+                <div>
+                  <span style="font-size:18px; margin-left: 5%">{{username}}</span>
+                  <el-button style="float: right; padding: 3px" type="text" @click="deleteAddress(index)">删除</el-button>
+                  <el-button style="float: right; padding: 3px" type="text" @click="editAddress(index)">修改</el-button>
+                  <el-dialog title="编辑地址" :visible.sync="editDialogFormVisible">
+                    <el-form :model="form">
+                      <el-form-item label="地址" :label-width="formLabelWidth">
+                        <el-input v-model="form.address" autocomplete="off"></el-input>
+                      </el-form-item>
+                      <el-form-item label="手机号" :label-width="formLabelWidth">
+                        <el-input v-model="form.tel" autocomplete="off"></el-input>
+                      </el-form-item>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                      <el-button @click="cancelEditAddress()">取 消</el-button>
+                      <el-button type="primary" @click="saveEditedAddress(index)">确 定</el-button>
+                    </div>
+                  </el-dialog>
+                  <div style="margin-left: 5%; padding-top: 5%">{{value.address}}</div>
+                  <div style="margin-left: 5%; padding-top: 3%">{{value.tel}}</div>
+                </div>
+                <div style="position: relative;top: 30px;">
+                </div>
+              </div>
+            </el-card>
+          </el-col>
+          <el-col :span="7" style="margin-right: 3%; margin-bottom: 3%">
+            <el-card :body-style="{ padding: '3px'}" shadow="hover" style="width: 100%; height: 150px;padding-right: 5%">
+              <div style="padding: 6px">
+                <div>
+                  <el-button style="margin-left:30%;margin-top: 15%" type="text" @click="dialogFormVisible = true">点击添加新地址</el-button>
+                  <el-dialog title="添加新地址" :visible.sync="dialogFormVisible">
+                    <el-form :model="form">
+                      <el-form-item label="地址" :label-width="formLabelWidth">
+                        <el-input v-model="form.address" autocomplete="off"></el-input>
+                      </el-form-item>
+                      <el-form-item label="手机号" :label-width="formLabelWidth">
+                        <el-input v-model="form.tel" autocomplete="off"></el-input>
+                      </el-form-item>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                      <el-button @click="cancelAddAddress()">取 消</el-button>
+                      <el-button type="primary" @click="addAddress()">确 定</el-button>
+                    </div>
+                  </el-dialog>
+                </div>
+                <div style="position: relative;top: 30px;">
+                </div>
+              </div>
+            </el-card>
+          </el-col>
+        </el-row>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
-export default {
-  name: 'AddressManage',
-  beforeMount: function () {
-    this.loadAddresses()
-  },
-  data: function () {
-    return {
-      addressInfos: [],
-      aid: 0,
-      address: '',
-      latitude: 0,
-      longitude: 0,
-      detailDialog: {
-        show: false,
-        additionMode: false,
-        editable: false
+  export default {
+    name: 'UserInfo',
+    data: function () {
+      return {
+        dialogFormVisible:false,
+        editDialogFormVisible:false,
+        form: {
+          address:'',
+          tel:''
+        },
+        formLabelWidth: '120px',
+        username:'蔡徐坤',
+        addresses:[{address:"江苏省南京市鼓楼区汉口路22号南京大学鼓楼校区陶园2舍407", tel:"15189585960"},
+          {address:"江苏省南京市鼓楼区汉口路22号南京大学鼓楼校区费彝民楼", tel:"13770752307"},
+          {address:"江苏省南京市鼓楼区汉口路22号南京大学鼓楼校区陶园2舍407", tel:"15189585960"},
+          {address:"江苏省南京市鼓楼区汉口路22号南京大学鼓楼校区陶园2舍407", tel:"15189585960"},
+          {address:"江苏省南京市鼓楼区汉口路22号南京大学鼓楼校区陶园2舍407", tel:"15189585960"},],
+        tabPosition:'left',
+        labelPosition: 'right',
+        UserInfos:{
+          avatar: 'https://inews.gtimg.com/newsapp_bt/0/7234467545/640',
+          name: '蔡徐坤'
+        }
+      }
+    },
+
+    methods:{
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+        if (key === " 1"){
+          this.$router.push('/customer/home/MyOrders')}
+        if (key === "2-1"){
+          this.$router.push('/customer/home/UserInfo')
+        }
+        if (key === "2-2"){
+          this.$router.push('/customer/home/AddressManage')
+        }
       },
-      rules: {
-        addressRules: [
-          address => !!address || '请填写详细地址',
-          address => (address && address.length <= 50) || '详细地址长度在50字符以内'
-        ],
-        latitudeRules: [
-          latitude => !!latitude || '请填写纬度',
-          latitude => (latitude && latitude > -90 && latitude < 90) || '纬度不正确'
-        ],
-        longitudeRules: [
-          longitude => !!longitude || '请填写经度',
-          longitude => (longitude && longitude > -180 && longitude < 180) || '经度不正确'
-        ]
-      }
-    }
-  },
-  methods: {
-    loadAddresses: function () {
-      this.$ajax({
-        url: '/customer/info/address/get',
-        method: 'get'
-      }).then(res => {
-        if (res.data['AccessDenied']) {
-          this.$router.push('/')
-        } else {
-          this.addressInfos.splice(0, this.addressInfos.length)
-          for (let addressInfo of res.data) {
-            this.addressInfos.push(addressInfo)
+
+      getOrderDetail(){
+      },
+
+      orderAgain(){
+      },
+
+      editAddress(index){
+        this.editDialogFormVisible = true;
+        this.form =  Object.assign({}, this.addresses[index]);//拷贝对应地址
+      },
+
+      saveEditedAddress(index){
+        this.editDialogFormVisible = false;
+        this.addresses[index].tel = this.form.tel;
+        this.addresses[index].address = this.form.address;
+        this.form.address = "";
+        this.form.tel = "";
+      },
+
+      cancelEditAddress(){
+        this.editDialogFormVisible = false;
+        this.form.address = "";
+        this.form.tel = "";
+      },
+
+      deleteAddress(index){
+        let restAddresses = this.addresses;
+        let newAddresses = [];
+        for (let i = 0; i < this.addresses.length; i++){
+          if (i !== index){
+            newAddresses.push(restAddresses[i]);
           }
         }
-      })
-    },
-    addDialog: function () {
-      this.aid = 0
-      this.address = ''
-      this.latitude = ''
-      this.longitude = ''
-      this.$refs.addressForm.resetValidation()
-      this.detailDialog.additionMode = true
-      this.detailDialog.editable = true
-      this.detailDialog.show = true
-    },
-    showDialog: function (addressInfo) {
-      this.aid = addressInfo.id
-      this.address = addressInfo.address
-      this.latitude = addressInfo.latitude
-      this.longitude = addressInfo.longitude
-      this.$refs.addressForm.resetValidation()
-      this.detailDialog.additionMode = false
-      this.detailDialog.editable = false
-      this.detailDialog.show = true
-    },
-    removeAddress: function () {
-      this.$ajax({
-        url: '/customer/info/address/remove',
-        method: 'post',
-        params: {
-          'aid': this.aid
-        }
-      }).then(res => {
-        if (res.data['AccessDenied']) {
-          this.$router.push('/')
-        } else {
-          this.detailDialog.show = false
-          this.loadAddresses()
-        }
-      })
-    },
-    modifyAddress: function () {
-      if (this.$refs.addressForm.validate()) {
-        this.$ajax({
-          url: '/customer/info/address/modify',
-          method: 'post',
-          params: {
-            'aid': this.aid,
-            'address': this.address,
-            'latitude': this.latitude,
-            'longitude': this.longitude
-          }
-        }).then(res => {
-          if (res.data['AccessDenied']) {
-            this.$router.push('/')
-          } else {
-            this.detailDialog.show = false
-            this.loadAddresses()
-          }
-        })
-      }
-    },
-    addAddress: function () {
-      if (this.$refs.addressForm.validate()) {
-        this.$ajax({
-          url: '/customer/info/address/add',
-          method: 'post',
-          params: {
-            'address': this.address,
-            'latitude': this.latitude,
-            'longitude': this.longitude
-          }
-        }).then(res => {
-          if (res.data['AccessDenied']) {
-            this.$router.push('/')
-          } else {
-            this.detailDialog.show = false
-            this.loadAddresses()
-          }
-        })
+        this.addresses = newAddresses;
+      },
+
+      addAddress(){
+        this.dialogFormVisible = false;
+        this.addresses.push({address:this.form.address, tel:this.form.tel});
+        this.form.tel = "";
+        this.form.address = "";
+      },
+
+      cancelAddAddress(){
+        this.dialogFormVisible = false;
+        this.form.tel = "";
+        this.form.address = "";
       }
     }
   }
-}
 </script>
 
-<style scoped>
+<style>
+  .text {
+    font-size: 14px;
+  }
+  .item {
+    margin-bottom: 18px;
+  }
 
+  .box-card {
+    width: 30%;
+  }
 </style>

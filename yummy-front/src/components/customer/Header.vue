@@ -8,7 +8,7 @@
       >
         <h3>首页</h3>
       </v-btn>
-      <v-btn flat large @click="$router.push('/customer/home/orders/unhandled')">
+      <v-btn flat large @click="$router.push('/customer/home/MyOrders')">
         <h3>我的订单</h3>
       </v-btn>
     </template>
@@ -21,11 +21,11 @@
         <v-icon>arrow_drop_down</v-icon>
       </v-btn>
       <v-list dense>
-        <v-list-tile href="#">
+        <v-list-tile href="/customer/home/UserInfo">
           <v-icon>person</v-icon>
           <v-list-tile-title>个人中心</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile href="#">
+        <v-list-tile href="/customer/home/AddressManage">
           <v-icon>location_on</v-icon>
           <v-list-tile-title>我的地址</v-list-tile-title>
         </v-list-tile>

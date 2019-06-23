@@ -1,15 +1,14 @@
 import SignUp from '@/components/customer/SignUp'
-import EmailVerify from '@/components/customer/EmailVerify'
 import Home from '@/components/customer/Home'
-import RestaurantList from '@/components/customer/RestaurantList'
 import ShopPage from '@/components/customer/ShopPage'
 import OrderPlace from '@/components/customer/OrderPlace'
-import UnhandledOrders from '@/components/customer/UnhandledOrders'
-import AccountCancel from '@/components/customer/AccountCancel'
-import InfoManage from '@/components/customer/InfoManage'
+import CheckOut from '../components/CustomerPay/CheckOut'
+import CheckStand from '../components/CustomerPay/CheckStand'
 import AddressManage from '@/components/customer/AddressManage'
-import PaymentManage from '@/components/customer/PaymentManage'
-import Records from '@/components/customer/Records'
+import MyOrders from '../components/customer/MyOrders'
+// import AccountBalance from '../components/customer/AccountBalance'
+import UserInfo from '../components/customer/UserInfo'
+import OrderDetail from '../components/customer/OrderDetail'
 
 export default [
   {
@@ -17,20 +16,55 @@ export default [
     name: 'CustomerSignUp',
     component: SignUp
   },
+  // {
+  //   path: '/customer/verify-email',
+  //   name: 'EmailVerify',
+  //   component: EmailVerify
+  // },
   {
-    path: '/customer/verify-email',
-    name: 'EmailVerify',
-    component: EmailVerify
+    path: '/customer/CheckOut',
+    name: 'CheckOut',
+    component: CheckOut
+  },
+  {
+    path: '/customer/CheckStand',
+    name: 'CheckStand',
+    component: CheckStand
   },
   {
     path: '/customer/home',
     component: Home,
     children: [
       {
-        path: '',
-        name: 'CustomerHome',
-        component: RestaurantList
+        path: 'MyOrders',
+        name: 'MyOrders',
+        component: MyOrders
       },
+      {
+        path: 'OrderDetail',
+        name: 'OrderDetail',
+        component: OrderDetail
+      },
+      // {
+      //   path: 'AccountBalance',
+      //   name: 'AccountBalance',
+      //   component: AccountBalance
+      // },
+      {
+        path: 'UserInfo',
+        name: 'UserInfo',
+        component: UserInfo
+      },
+      {
+        path: 'AddressManage',
+        name: 'AddressManage',
+        component: AddressManage
+      },
+      // {
+      //   path: '',
+      //   name: 'CustomerHome',
+      //   component: RestaurantList
+      // },
       {
         path: 'shop/:rid',
         name: 'Shop',
@@ -40,36 +74,6 @@ export default [
         path: 'order/place',
         name: 'OrderPlace',
         component: OrderPlace
-      },
-      {
-        path: 'orders/unhandled',
-        name: 'CustomerUnhandledOrders',
-        component: UnhandledOrders
-      },
-      {
-        path: 'account/cancel',
-        name: 'CustomerAccountCancel',
-        component: AccountCancel
-      },
-      {
-        path: 'records',
-        name: 'CustomerRecords',
-        component: Records
-      },
-      {
-        path: 'info',
-        name: 'CustomerInfoManage',
-        component: InfoManage
-      },
-      {
-        path: 'address',
-        name: 'CustomerAddressManage',
-        component: AddressManage
-      },
-      {
-        path: 'payment',
-        name: 'CustomerPaymentManage',
-        component: PaymentManage
       }
     ]
   }

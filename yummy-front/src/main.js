@@ -5,11 +5,14 @@ import Vuetify from 'vuetify'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 axios.defaults.baseURL = 'http://localhost:5000/Yummy/api'
 axios.defaults.withCredentials = true
+Vue.use(ElementUI)
 Vue.prototype.$ajax = axios
 Vue.config.productionTip = false
 Vue.use(Vuetify, {
