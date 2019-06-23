@@ -6,25 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="beda16b5-4a6a-42fa-985b-86942a60f06b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/assets/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/AccountCancel.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/AddressManage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/EmailVerify.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/components/customer/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/InfoManage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/Menu.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/PaymentManage.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/Records.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/RestaurantList.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/components/customer/UnhandledOrders.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yummy-front/src/router/customer-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/yummy-front/src/router/customer-routes.js" afterDir="false" />
-    </list>
+    <list default="true" id="beda16b5-4a6a-42fa-985b-86942a60f06b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="448" column="35" selection-start-line="448" selection-start-column="35" selection-end-line="448" selection-end-column="35" />
+            <state relative-caret-position="1038">
+              <caret line="275" column="27" selection-start-line="275" selection-start-column="27" selection-end-line="275" selection-end-column="27" />
               <folding>
                 <element signature="n#v-img#0;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
                 <element signature="n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
@@ -311,30 +293,7 @@
               <item name="Yummy" type="462c0819:PsiDirectoryNode" />
               <item name="yummy-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Yummy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Yummy" type="462c0819:PsiDirectoryNode" />
-              <item name="yummy-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Yummy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Yummy" type="462c0819:PsiDirectoryNode" />
-              <item name="yummy-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="customer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Yummy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Yummy" type="462c0819:PsiDirectoryNode" />
-              <item name="yummy-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CustomerPay" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -557,12 +516,12 @@
       <workItem from="1560563822608" duration="13803000" />
       <workItem from="1560752434179" duration="10081000" />
       <workItem from="1561109178257" duration="2460000" />
-      <workItem from="1561275487336" duration="8203000" />
+      <workItem from="1561275487336" duration="8562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="752578000" />
+    <option name="totallyTimeSpent" value="752937000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,7 +534,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="749" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" x="490" y="44" width="382" height="675" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.24885845" />
       <window_info id="Structure" order="1" sideWeight="0.5007949" side_tool="true" weight="0.24961948" />
@@ -2620,8 +2578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yummy-front/src/components/customer/ShopPage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="448" column="35" selection-start-line="448" selection-start-column="35" selection-end-line="448" selection-end-column="35" />
+        <state relative-caret-position="1038">
+          <caret line="275" column="27" selection-start-line="275" selection-start-column="27" selection-end-line="275" selection-end-column="27" />
           <folding>
             <element signature="n#v-img#0;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
             <element signature="n#v-flex#1;n#v-layout#0;n#v-flex#0;n#template#0;n#!!top" />
