@@ -1,5 +1,5 @@
 <template>
-  <v-card :width="width">
+  <v-card :width="width" flat>
     <v-layout align-center>
       <!------------- Meal Image ------------->
       <v-img

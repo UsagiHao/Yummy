@@ -39,7 +39,7 @@
       </v-flex>
     </v-layout>
     <!--------------- Menu and Shopping Cart --------------->
-    <v-layout xs12>
+    <v-layout xs12 mb-5>
       <!---------------- Meal Type List ----------------->
       <v-flex v-if="!mealSearch.active" ml-5 shrink>
         <v-card elevation="5" class="sticky-box">
@@ -62,23 +62,27 @@
       </v-flex>
       <v-flex v-else sm2></v-flex>
       <!---------------- Meal List ----------------->
-      <v-flex sm6 ml-5 my-3>
+      <v-flex sm6 ml-5 mr-0 my-3>
         <template v-if="!mealSearch.active">
           <template v-for="type in restaurant.types">
-            <v-layout :key="'title-' + type" mt-3 mb-1>
+            <v-layout :key="'title-' + type" mt-4 mb-1 ml-3>
               <h2 :id="'h-' + type">{{type}}</h2>
             </v-layout>
-            <v-layout :key="type" wrap>
-              <template v-for="meal in restaurant.menu[type]">
-                <v-flex :key="meal.id" my-2>
-                  <MealCard
-                    :meal="meal"
-                    :cart-items="cartItems"
-                    :width="mealCardWidth"
-                  ></MealCard>
-                </v-flex>
-              </template>
-            </v-layout>
+            <v-card elevation="3">
+              <v-layout :key="type" wrap>
+                <template v-for="meal in restaurant.menu[type]">
+                  <v-flex :key="meal.id" my-3 shrink mx-3>
+                    <v-layout justify-center>
+                      <MealCard
+                        :meal="meal"
+                        :cart-items="cartItems"
+                        :width="mealCardWidth"
+                      ></MealCard>
+                    </v-layout>
+                  </v-flex>
+                </template>
+              </v-layout>
+            </v-card>
           </template>
         </template>
         <!--------------- Search Results ----------------->
@@ -105,7 +109,7 @@
         </template>
       </v-flex>
       <!------------ Search & Info -------------->
-      <v-flex sm3 pt-3 mx-3>
+      <v-flex sm3 pt-3 mx-5>
         <v-layout>
           <v-text-field
             v-model="mealSearch.key"
@@ -115,7 +119,7 @@
           ></v-text-field>
         </v-layout>
         <v-layout mt-3>
-          <p style="text-align: start">注意事项：<br/>
+          <p class="other-info" style="">注意事项：<br/>
             1.收到后尽快食用或放入冰箱冷冻保存<br/>
             2.包装内的干冰-70℃，杜绝手触摸或食用，不可放入冰箱等密闭空间，任其自然挥发即可<br/>
             3.订单生成后，不支持更改收货地址<br/>
@@ -247,7 +251,7 @@ export default {
       },
       currentType: '',
       scrolling: false,
-      mealCardWidth: 320,
+      mealCardWidth: 300,
       cartItems: {},
       backTop: false,
       mealSearch: {
@@ -472,21 +476,21 @@ export default {
   .sticky-box {
     position: -webkit-sticky;
     position: sticky;
-    top: 60px;
+    top: 70px;
     bottom: 0;
   }
   .type-list {
-    width: 200px;
+    width: 150px;
     /*background-color: #ede8ef;*/
   }
   .type-selected {
-    background-color: #b0b6be;
+    background-color: #1E89E0;
   }
   .cart-card {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 350px;
+    width: 370px;
   }
   .cart-item-list {
     border-top: 2px solid #2070ef;
@@ -501,9 +505,15 @@ export default {
     border-radius: 0 0 0 0;
   }
   .cart-btn-left {
-    width: 240px;
+    width: 250px;
   }
   .cart-btn-right {
-    width: 110px;
+    width: 120px;
+  }
+  .other-info {
+    text-align: start;
+    letter-spacing: 3px;
+    font: 15px Arial;
+    color: #8f8e8e
   }
 </style>
